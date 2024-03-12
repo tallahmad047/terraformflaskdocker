@@ -31,8 +31,8 @@ resource "aws_instance" "website" {
               sudo apt install python3-pip -y
               sudo pip3 install psutil flask
               sudo systemctl restart docker
-              sudo usermod -aG docker ubuntu
-
+              sudo usermod -aG docker 
+              git clone https://github.com/tallahmad047/terraformflaskdocker.git
               
               sudo docker build -t myflaskappv1 .
               sudo docker run -p 5000:5000 myflaskappv1
